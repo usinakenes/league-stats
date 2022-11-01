@@ -1,0 +1,28 @@
+.results-wrapper{
+    margin-top: 20px;
+    border-radius: 10px;
+    padding: 30px;
+    background-color: #f6f6f6;
+    width: 700px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 3px 8px;
+    margin-bottom: calc(40vh);
+
+    .champion-wrapper{
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #ddd;
+        
+        
+        .summoner-icon{
+            width: 100px;
+            height: 100px;
+            border-radius: 20%;
+        }
+    
+        .summoner-name{
+            margin-top: 10px;
+        }
+    }
+}

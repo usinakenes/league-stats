@@ -1,0 +1,156 @@
+.match-container{
+    margin: 5px 0px;
+    padding: 15px 20px;
+    display: flex;
+    flex-direction: row;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.12) 0px 2px 6px 0px;
+    border-radius: 10px;
+    background-color: #fff;
+    // border-bottom: 1px solid #ddd;
+
+    &.win{
+        border-left: green 7px solid;
+    }
+
+    &.lose{
+        border-left: rgb(208, 30, 30) 7px solid;
+    }
+
+    .result{
+        font-size: 10px;
+        
+        font-weight: bold;
+    }
+
+    .left-side{
+
+        .game-mode{
+            font-size: 14px;
+
+            &.win{
+                color: green;
+            }
+    
+            &.lose{
+                color: rgb(208, 30, 30);
+            }
+        }
+
+        .champion{
+            font-weight: bold;
+        }
+    }
+
+    .middle-side{
+        margin-left: 40px;
+        display: flex;
+        flex-direction: column;
+
+        .middle-top-side{
+
+            display: flex;
+            flex-direction: row;
+
+            .champion-icon-circle{
+                height: 60px;
+                width: 60px;
+                overflow: hidden;
+                box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.12) 0px 2px 6px 0px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+
+                
+                .champion-icon{
+                    height: 60px;    
+                    width: 60px;       
+                }
+            }
+
+            .level-circle{
+                background-color: #333;
+                height: 24px;
+                width: 24px;
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                transform: translateX(-14px);
+
+                .level{
+                    color: white;
+                    font-size: 14px;
+
+                }
+            }
+
+            .summoners{
+                margin-left: -8px;
+                margin-right: 8px;
+                .summoners-img{
+                    height: 24px;
+                    height: 24px;
+                    border-radius: 5px;
+                }
+            }
+
+            .score-area{
+                margin-left: 5px;
+
+                .score{
+                    font-weight: 600;
+                    font-size: 18px;
+                }
+
+                .kda{
+                    font-size: 14px;
+                }
+            }
+
+            .gold-dmg-area{
+                margin-left: 20px;
+                
+                font-size: 14px;
+                font-weight: 600;
+
+            }
+        }
+
+        .middle-bot-side{
+            
+            margin-top: 10px;
+            
+
+            .items{
+                display: flex;
+                flex-direction: row;
+                list-style: none;
+
+                .item{
+                    margin-right: 5px;
+
+                    .item-icon-area{
+                        .item-icon{
+                            width: 36px;
+                            height: 36px;
+                            border-radius: 5px;
+                            box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.12) 0px 2px 6px 0px;
+                        }
+
+                        .empty-slot{
+                            width: 36px;
+                            height: 36px;
+                            border-radius: 5px;
+                            background-color: #ddd;
+                            box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.12) 0px 2px 6px 0px;
+                        }
+                    }
+                }
+            }
+        }        
+        
+    }
+
+    
+}
