@@ -75,6 +75,9 @@
     
                     @media (max-width: 768px) {
                         font-size: 9px;
+                        width: 30px;
+                        padding: 1px;
+                        left: calc(50% - 15px);
                     }
                 }
             }
@@ -112,6 +115,7 @@
 
                     @media (max-width: 768px) {
                         margin-left: 10px;
+                        font-size: 9px;
                     }
                 }
             }

@@ -22,14 +22,9 @@ function App() {
   const [isLoading, setIsLoading] = useState(false)
 
 
-
-
-  // console.log(playerData);
-  // console.log(matches)
-
   useEffect(() => {
 
-      axios.get('http://localhost:4000/api/searchPlayer', 
+      axios.get('https://league-stats.onrender.com/api/searchPlayer', 
         { params: { username: summonerName, regionPrefix: regionsToRegionPrefixes.get(selectedRegion) } })
       .then(res => {
         setPlayerData(res.data)
@@ -37,16 +32,15 @@ function App() {
         console.log(err);
       })
 
-      axios.get('http://localhost:4000/api/getPlayerRank',
+      axios.get('https://league-stats.onrender.com/api/getPlayerRank',
         { params: {username: summonerName, regionPrefix: regionsToRegionPrefixes.get(selectedRegion) } })
         .then(res => {
           setRankData(res.data[res.data.length-1])
-          console.log(rankData)
         }).catch(err => {
           console.log(err)
         })
 
-      axios.get('http://localhost:4000/api/latest20Matches', 
+      axios.get('https://league-stats.onrender.com/api/latest20Matches', 
         { params: { 
           username: summonerName,
            regionPrefix: regionsToRegionPrefixes.get(selectedRegion),
@@ -61,8 +55,6 @@ function App() {
       })   
 
   }, [summonerName])
-
-  console.log(summonerName)
 
 
   return (

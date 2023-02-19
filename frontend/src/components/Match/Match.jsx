@@ -12,8 +12,6 @@ const Match = ({ match, playerData }) => {
     let teaminfo = match.info.teams
     let teamIndex = teaminfo.findIndex(e => e.teamId === participantTeam)
 
-    console.log(match)
-
     return(
       <div key={match.info.gameId} className={`match-container ${teaminfo[teamIndex].win ? 'win' : 'lose'}`}>
         <div className='left-side'>

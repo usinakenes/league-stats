@@ -22,7 +22,6 @@ const Searchbar = ({
         e.preventDefault()
         setSummonerName(searchText)
         setIsLoading(true)
-        console.log('button is clicked');
     }
 
   return (
