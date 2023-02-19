@@ -27,16 +27,15 @@ const Searchbar = ({
 
   return (
     <div className='form-wrapper'>
+        <img className='logo' src="/images/league-logo.png" alt="logo" />
         <h2 className='form-title'>Search for a summoner</h2>
         <form className='form'>
-            <label className='summoner-label'>Summoners name:</label>
             <input 
                 className='summoner-input' 
                 type='text' 
-                placeholder='Ex: TheFaithfulDevil' 
+                placeholder='Summoner name' 
                 onChange={e => setSearchText(e.target.value)}
             />
-            <label className='region-label'>Region:</label>
             <Dropdown selectedRegion={selectedRegion} setSelectedRegion={setSelectedRegion} />
             <button 
                 className='search-button'

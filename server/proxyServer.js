@@ -21,7 +21,17 @@ function getPlayerPUUID(playerName, regionPrefix){
         })
 }
 
-app.get('/searchPlayer', async (req, res) => {
+function getPlayerID(playerName, regionPrefix){
+    return axios.get('https://' + regionPrefix + '.api.riotgames.com' + '/lol/summoner/v4/summoners/by-name/' 
+        + playerName + '?api_key=' + API_KEY)
+        .then(res => {
+            return res.data.id
+        }).catch(err => {
+            console.error(err)
+        })
+}
+
+app.get('/api/searchPlayer', async (req, res) => {
     const playerName = req.query.username
     const regionPrefix = req.query.regionPrefix
 
@@ -33,14 +43,26 @@ app.get('/searchPlayer', async (req, res) => {
     res.json(playerData)
 })
 
+app.get('/api/getPlayerRank', async (req, res) => {
+    const playerName = req.query.username
+    const regionPrefix = req.query.regionPrefix
+    
+    const ID = await getPlayerID(playerName, regionPrefix)
+    const API_CALL = 'https://' + regionPrefix + '.api.riotgames.com/lol/league/v4/entries/by-summoner/' + ID + '?api_key=' + API_KEY
+
+    const playerRank = await axios.get(API_CALL)
+        .then(res => res.data)
+        .catch(err => err)
+
+    res.json(playerRank)
+ })
 
 
-app.get('/latest20Matches', async (req, res) => {
+app.get('/api/latest20Matches', async (req, res) => {
     const playerName = req.query.username
     const regionPrefix = req.query.regionPrefix
     const continentPrefix = req.query.continentPrefix
-    console.log(continentPrefix, regionPrefix)
-    // PUUID
+
     const PUUID = await getPlayerPUUID(playerName, regionPrefix)
     const API_CALL = 'https://' + continentPrefix + '.api.riotgames.com' + '/lol/match/v5/matches/by-puuid/' 
         + PUUID + '/ids' + '?api_key=' + API_KEY
@@ -53,7 +75,7 @@ app.get('/latest20Matches', async (req, res) => {
     
     for(var i = 0; i < matchIds.length; i++){
         const matchId = matchIds[i]
-        const matchData = await axios.get('https://europe.api.riotgames.com' + '/lol/match/v5/matches/' 
+        const matchData = await axios.get('https://' + continentPrefix + '.api.riotgames.com' + '/lol/match/v5/matches/' 
             + matchId + '?api_key=' + API_KEY)
             .then(res => res.data)
             .catch(err => err)

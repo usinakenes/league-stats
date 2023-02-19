@@ -8,14 +8,20 @@
     align-items: center;
 
     .dropdown-btn{
-        padding: 5px 10px;
+        padding: 7px 10px;
         box-shadow: 3px;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        background-color: #fff;
+        background-color: #181818;
+        border-bottom: 1px solid #aaa;
         width: 100%;
         cursor: pointer;
+
+        @media (max-width: 768px) {
+
+            font-size: 12px;
+        }
     }
 
     .dropdown-icon-wrapper{
@@ -27,7 +33,8 @@
         position: absolute;
         top: 110%;
         padding: 5px;
-        background-color: #fff;
+        background-color: #181818;
+        color: #aaa;
         width: 100%;
         border-radius: 10px;
         // box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 8px;
@@ -37,7 +44,7 @@
             transition: all 0.2s;
 
             &:hover{
-                background-color: #ededed ;
+                background-color: #444 ;
                 cursor: pointer;
             }
             

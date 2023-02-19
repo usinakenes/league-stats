@@ -17,6 +17,7 @@ function App() {
 
   const [playerData, setPlayerData] = useState({})
   const [matches, setMatches] = useState([])
+  const [rankData, setRankData] = useState({})
 
   const [isLoading, setIsLoading] = useState(false)
 
@@ -27,7 +28,8 @@ function App() {
   // console.log(matches)
 
   useEffect(() => {
-      axios.get('http://localhost:4000/searchPlayer', 
+
+      axios.get('http://localhost:4000/api/searchPlayer', 
         { params: { username: summonerName, regionPrefix: regionsToRegionPrefixes.get(selectedRegion) } })
       .then(res => {
         setPlayerData(res.data)
@@ -35,7 +37,16 @@ function App() {
         console.log(err);
       })
 
-      axios.get('http://localhost:4000/latest20Matches', 
+      axios.get('http://localhost:4000/api/getPlayerRank',
+        { params: {username: summonerName, regionPrefix: regionsToRegionPrefixes.get(selectedRegion) } })
+        .then(res => {
+          setRankData(res.data[res.data.length-1])
+          console.log(rankData)
+        }).catch(err => {
+          console.log(err)
+        })
+
+      axios.get('http://localhost:4000/api/latest20Matches', 
         { params: { 
           username: summonerName,
            regionPrefix: regionsToRegionPrefixes.get(selectedRegion),
@@ -49,8 +60,10 @@ function App() {
         console.log(err);
       })   
 
-
   }, [summonerName])
+
+  console.log(summonerName)
+
 
   return (
     <div className='App'>
@@ -71,7 +84,7 @@ function App() {
             transition={{ duration: 0.4 }}
             className='resultsbox'
           >
-            <ResultsBox playerData={playerData} matches={matches} isLoading={isLoading}/>
+            <ResultsBox rankData={rankData} playerData={playerData} matches={matches} isLoading={isLoading}/>
           </motion.div>
           
         )}

@@ -2,6 +2,8 @@ import React from 'react'
 import './Match.scss'
 import { summonerSpells } from '../../assets/summoner-spells'
 
+const version = '13.3.1'
+
 const Match = ({ match, playerData }) => {
   
     let participantIndex = match.metadata.participants.indexOf(playerData.puuid)
@@ -44,7 +46,8 @@ const Match = ({ match, playerData }) => {
               <p className='gold'>Gold: <span style={{fontWeight:'normal'}}>{participant.goldEarned}</span></p>
             </div>
           </div>
-          <div className='middle-bot-side'>
+        </div>
+        <div className='right-side'>
             <ul className='items'>
               
               <li className='item'>
@@ -52,7 +55,7 @@ const Match = ({ match, playerData }) => {
                   {participant.item0 === 0 ? (
                     <div className='empty-slot'></div>
                   ) : (
-                    <img className='item-icon' src={`https://ddragon.leagueoflegends.com/cdn/12.20.1/img/item/${participant.item0}.png`} alt='item-icon'/>
+                    <img className='item-icon' src={`https://ddragon.leagueoflegends.com/cdn/${version}/img/item/${participant.item0}.png`} alt='item-icon'/>
                   )}
                 </div>
               </li>
@@ -62,7 +65,7 @@ const Match = ({ match, playerData }) => {
                   {participant.item1 === 0 ? (
                     <div className='empty-slot'></div>
                   ) : (
-                    <img className='item-icon' src={`https://ddragon.leagueoflegends.com/cdn/12.20.1/img/item/${participant.item1}.png`} alt='item-icon'/>
+                    <img className='item-icon' src={`https://ddragon.leagueoflegends.com/cdn/${version}/img/item/${participant.item1}.png`} alt='item-icon'/>
                   )}
                 </div>
               </li>
@@ -72,7 +75,7 @@ const Match = ({ match, playerData }) => {
                   {participant.item2 === 0 ? (
                     <div className='empty-slot'></div>
                   ) : (
-                    <img className='item-icon' src={`https://ddragon.leagueoflegends.com/cdn/12.20.1/img/item/${participant.item2}.png`} alt='item-icon'/>
+                    <img className='item-icon' src={`https://ddragon.leagueoflegends.com/cdn/${version}/img/item/${participant.item2}.png`} alt='item-icon'/>
                   )}
                 </div>
               </li>
@@ -82,7 +85,7 @@ const Match = ({ match, playerData }) => {
                   {participant.item3 === 0 ? (
                     <div className='empty-slot'></div>
                   ) : (
-                    <img className='item-icon' src={`https://ddragon.leagueoflegends.com/cdn/12.20.1/img/item/${participant.item3}.png`} alt='item-icon'/>
+                    <img className='item-icon' src={`https://ddragon.leagueoflegends.com/cdn/${version}/img/item/${participant.item3}.png`} alt='item-icon'/>
                   )}
                 </div>
               </li>
@@ -92,7 +95,7 @@ const Match = ({ match, playerData }) => {
                   {participant.item4 === 0 ? (
                     <div className='empty-slot'></div>
                   ) : (
-                    <img className='item-icon' src={`https://ddragon.leagueoflegends.com/cdn/12.20.1/img/item/${participant.item4}.png`} alt='item-icon'/>
+                    <img className='item-icon' src={`https://ddragon.leagueoflegends.com/cdn/${version}/img/item/${participant.item4}.png`} alt='item-icon'/>
                   )}
                 </div>
               </li>
@@ -102,7 +105,7 @@ const Match = ({ match, playerData }) => {
                   {participant.item5 === 0 ? (
                     <div className='empty-slot'></div>
                   ) : (
-                    <img className='item-icon' src={`https://ddragon.leagueoflegends.com/cdn/12.20.1/img/item/${participant.item5}.png`} alt='item-icon'/>
+                    <img className='item-icon' src={`https://ddragon.leagueoflegends.com/cdn/${version}/img/item/${participant.item5}.png`} alt='item-icon'/>
                   )}
                 </div>
               </li>
@@ -112,15 +115,12 @@ const Match = ({ match, playerData }) => {
                   {participant.item6 === 0 ? (
                     <div className='empty-slot'></div>
                   ) : (
-                    <img className='item-icon' src={`https://ddragon.leagueoflegends.com/cdn/12.20.1/img/item/${participant.item6}.png`} alt='item-icon'/>
+                    <img className='item-icon' src={`https://ddragon.leagueoflegends.com/cdn/${version}/img/item/${participant.item6}.png`} alt='item-icon'/>
                   )}
                 </div>
               </li>
             </ul>
           </div>
-
-          
-        </div>
       </div>
       
     )

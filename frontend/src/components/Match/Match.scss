@@ -3,17 +3,22 @@
     padding: 15px 20px;
     display: flex;
     flex-direction: row;
-    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.12) 0px 2px 6px 0px;
     border-radius: 10px;
-    background-color: #fff;
+    border: 1px solid #444;
+    background-color: #181818;
     // border-bottom: 1px solid #ddd;
 
+    @media (max-width: 768px) {
+        padding: 10px;
+
+    }
+
     &.win{
-        border-left: green 7px solid;
+        border-left: rgb(38, 112, 38) 7px solid;
     }
 
     &.lose{
-        border-left: rgb(208, 30, 30) 7px solid;
+        border-left: rgb(159, 49, 49) 7px solid;
     }
 
     .result{
@@ -22,34 +27,60 @@
         font-weight: bold;
     }
 
-    .left-side{
+    .left-side{;
+
+        width: 28%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        @media (max-width: 768px){
+            font-size: 9px;
+        }
 
         .game-mode{
-            font-size: 14px;
+            font-size: 15px;
+
+            @media (max-width: 768px) {
+                font-size: 8px;
+            }
 
             &.win{
-                color: green;
+                color: rgb(38, 112, 38);
             }
     
             &.lose{
-                color: rgb(208, 30, 30);
+                color: rgb(159, 49, 49);
             }
         }
 
         .champion{
             font-weight: bold;
+            font-size: 14px;
+
+            @media (max-width: 768px) {
+                font-size: 9px;
+            }
         }
     }
 
     .middle-side{
-        margin-left: 40px;
         display: flex;
         flex-direction: column;
+        justify-content: center;
+        width: 48%;;
+
+        @media (max-width: 768px) {
+            font-size: 12px;
+            width: 100%;
+        }
 
         .middle-top-side{
 
             display: flex;
             flex-direction: row;
+            align-items: center;
+
 
             .champion-icon-circle{
                 height: 60px;
@@ -61,10 +92,20 @@
                 justify-content: center;
                 border-radius: 50%;
 
+                @media (max-width: 768px) {
+                    height: 28px;
+                    width: 28px;
+                }
+
                 
                 .champion-icon{
-                    height: 60px;    
-                    width: 60px;       
+                    height: 64px;    
+                    width: 64px;
+                    
+                    @media (max-width: 768px) {
+                        width: 30px;
+                        height: 30px;
+                    }
                 }
             }
 
@@ -76,80 +117,125 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                transform: translateX(-14px);
+                transform: translate(-14px, -14px);
+
+                @media (max-width: 768px) {
+                    height: 16px;
+                    width: 16px;
+                    transform: translate(-10px, -10px);
+                }
 
                 .level{
                     color: white;
                     font-size: 14px;
 
+                    @media (max-width: 768px) {
+                        font-size: 8px;
+                    }
                 }
             }
 
             .summoners{
                 margin-left: -8px;
                 margin-right: 8px;
+
                 .summoners-img{
                     height: 24px;
-                    height: 24px;
                     border-radius: 5px;
+
+                    @media (max-width: 768px) {
+                        height: 14px;
+                    }
                 }
             }
 
             .score-area{
                 margin-left: 5px;
 
+                @media (max-width: 768px) {
+                    width: 30%;
+                }
+
                 .score{
                     font-weight: 600;
                     font-size: 18px;
+
+                    @media (max-width: 768px) {
+                        font-size: 12px;
+                        text-align: center;
+                    }
                 }
 
                 .kda{
                     font-size: 14px;
+
+                    @media (max-width: 768px) {
+                        font-size: 9px;
+                        text-align: center;
+                    }
                 }
             }
 
             .gold-dmg-area{
-                margin-left: 20px;
+                margin-left: 12px;
                 
                 font-size: 14px;
                 font-weight: 600;
 
+                @media (max-width: 768px) {
+                    margin-left: 5px;
+                    font-size: 7px;
+                }
             }
-        }
+        }       
+        
+    }
 
-        .middle-bot-side{
-            
-            margin-top: 10px;
-            
+    .right-side{
 
+        display: flex;
+        justify-content: center;
+        align-items: center;;
             .items{
-                display: flex;
-                flex-direction: row;
+                display: grid;
+                grid-template-columns: repeat(4,40px);
                 list-style: none;
+
+                @media (max-width: 768px) {
+                    grid-template-columns: repeat(4,26px);
+                }
 
                 .item{
                     margin-right: 5px;
 
                     .item-icon-area{
                         .item-icon{
-                            width: 36px;
-                            height: 36px;
+                            width: 32px;
+                            height: 32px;
                             border-radius: 5px;
                             box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.12) 0px 2px 6px 0px;
+
+                            @media (max-width: 768px) {
+                                width: 22px;
+                                height: 22px;
+                            }
                         }
 
                         .empty-slot{
-                            width: 36px;
-                            height: 36px;
+                            width: 32px;
+                            height: 32px;
                             border-radius: 5px;
-                            background-color: #ddd;
+                            background-color: #222;
                             box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.12) 0px 2px 6px 0px;
+
+                            @media (max-width: 768px) {
+                                width: 22px;
+                                height: 22px;
+                            }
                         }
                     }
                 }
-            }
-        }        
-        
+        } 
     }
 
     

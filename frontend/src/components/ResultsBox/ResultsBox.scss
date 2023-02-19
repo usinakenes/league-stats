@@ -2,27 +2,136 @@
     margin-top: 20px;
     border-radius: 10px;
     padding: 30px;
-    background-color: #f6f6f6;
+    background-color: #181818;
+    color: #aaa;
     width: 700px;
     display: flex;
     flex-direction: column;
     box-shadow: rgba(0, 0, 0, 0.4) 0px 3px 8px;
     margin-bottom: calc(40vh);
 
-    .champion-wrapper{
+    @media (max-width: 768px) {
+        margin-top: 8px;
+        width: 90vw;
+        font-size: 12px;
+        padding: 12px;
+        justify-content: space-evenly;;
+    }
+
+
+    .error-message{
+        font-weight: 400;
+        font-size: 14px;
+        text-align: center;
+    }
+
+    .summoner-wrapper{
         margin-bottom: 20px;
         padding-bottom: 20px;
-        border-bottom: 1px solid #ddd;
-        
-        
-        .summoner-icon{
-            width: 100px;
-            height: 100px;
-            border-radius: 20%;
+        border-bottom: 1px solid #444;
+        display: flex;
+        flex-direction: row;
+
+        @media (max-width: 768px) {
+            font-size: 12px;
+            padding-bottom: 10px;
         }
+
+        .summoner-left-side{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+
+            .summoner-icon-area{
+                position: relative;
     
-        .summoner-name{
-            margin-top: 10px;
+                .summoner-icon{
+                    width: 80px;
+                    height: 80px;
+                    border-radius: 20%;
+                    border: 2px solid #555;
+
+                    @media (max-width: 768px) {
+                        width:50px;
+                        height: 50px;
+                        border-width: 1px;
+                    }
+                }    
+    
+                .summoner-level{
+                    position: absolute;
+                    padding: 3px;
+                    background-color: #222;
+                    color: white;
+                    display: flex;
+                    width: 40px;
+                    border-radius: 5px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    bottom: 0px;
+                    left: calc(50% - 20px);
+    
+                    @media (max-width: 768px) {
+                        font-size: 9px;
+                    }
+                }
+            }
+
+            .summoner-name-info{
+                margin-left: 20px;
+
+                @media (max-width: 768px) {
+                    font-size: 9px;
+                    margin-left: 10px;
+                }
+            }
         }
+
+        .summoner-right-side{
+            margin-left: 90px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+
+            @media (max-width: 768px) {
+                margin-left: 30px;
+                font-size: 10px;
+            }
+
+
+            .summoner-rank-info{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .summoner-rank-details{
+                    margin-left: 20px;
+
+                    @media (max-width: 768px) {
+                        margin-left: 10px;
+                    }
+                }
+            }
+
+            .rank-image{
+                height: 86px;
+
+                @media (max-width: 768px) {
+                    height: 40px;
+                }
+            }
+
+            .lp{
+                font-weight: normal;
+            }
+        } 
+        
+    }
+
+    .matches{
+        margin-top: 20px;
     }
 }
