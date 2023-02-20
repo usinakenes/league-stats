@@ -35,7 +35,17 @@ function App() {
       axios.get('https://league-stats.onrender.com/api/getPlayerRank',
         { params: {username: summonerName, regionPrefix: regionsToRegionPrefixes.get(selectedRegion) } })
         .then(res => {
-          setRankData(res.data[res.data.length-1])
+
+        let target;
+
+          for (let i = 0; i < res.data.length; i++){
+            if (res.data[i].queueType === 'RANKED_SOLO_5x5'){
+              target = res.data[i]
+              break;
+            }
+          }
+
+          setRankData(target)
         }).catch(err => {
           console.log(err)
         })
@@ -53,6 +63,7 @@ function App() {
       }).catch(err => {
         console.log(err);
       })   
+
 
   }, [summonerName])
 
