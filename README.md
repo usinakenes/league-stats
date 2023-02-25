@@ -1,6 +1,6 @@
 # league-stats
 
-Note: Currently broken! Will be fixed soon!
+Note: Currently a bit broken! Try sending the form ~30 seconds after the page is fully loaded! Will be fixed soon.
 
 The app is online! https://lol-stats.netlify.app/
 
